@@ -10,54 +10,69 @@
 </head>
 
 <body>
-    <div class="formStyle">
-        <form name="registration" action=" /process" method="GET">
-            <ul>
-                <li><label for="name"></label></li>
+    <h1>Famer one registration</h1>
+    <form name="registration" action="" method="">
+        <div class="container">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first name">First Name <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="firstName" id="firstName"
+                        placeholder="Enter Customer's First Name" required>
+                    <div id="error1" style="display: none; color:red;">First Name is required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="first name">Surname <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="surName" id="surName"
+                        placeholder="Enter Customer's Surname Name" required>
+                    <div id="error2" style="display: none; color:red;">Surname is required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="date of birth">date of birth<span style="color: red;">*</span></label>
+                    <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth"
+                        placeholder="date of birth">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="phone number">phone number<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="usernumber" id="userNumber"
+                        placeholder="urban famer number" required>
+                    <div id="error1" style="display: none; color:red;">Number required</div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="nin">NIN<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="nin" id="nin" placeholder="Enter NIN number" required>
+                    <div id="error2" style="display: none; color:red;">NIN is required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date of registration">date of registration<span style="color: red;">*</label>
+                    <input type="datetime-local" class="form-control" name="dateOfRegistration" id="dateOfRegistration"
+                        placeholder="date of registration" required>
+                    <div id="error2" style="display: none; color:red;">date of registration is required</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="residence">Residence<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="residence" id="residence" placeholder="Residence"
+                            required>
+                        <div id="error1" style="display: none; color:red;">residence is required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="directions to recidence">Directions to residence<span
+                                style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="directionsToResidence" id="directionsToResidence"
+                            placeholder="Enter directions" required>
+                        <div id="error2" style="display: none; color:red;">Acitivities taken required</div>
 
-                <li><input type="text" placeholder="name:" name="username" size="46" /></li>
-
-                <li>
-                    <label for="ward"></label></li>
-
-                <li><input type="ward" placeholder="ward: " name="wardid " size="46 " /></li>
-
-                <li><label for="FO number "></label></li>
-                <input type="text " placeholder="number: " name="usernumber " size="46 " /></li>
-
-                <li><label for="address "></label></li>
-                <li><input type="text " placeholder="Address: " name="address " size="46 " /></li>
-                <li><label for="country "></label></li>
-                <li><select name="ward" placeholder="ward: ">
-                        <option selected=" " value="Default ">(Please select a country)</option>
-                        <option value="AF ">1</option>
-                        <option value="AL ">2</option>
-                        <option value="DZ ">3</option>
-                        <option value="AS ">4</option>
-                        <option value="AD ">5</option>
-                    </select></li>
-                <li><label for="NIN number"></label></li>
-                <li><input type="text " name="NIN number" placeholder="NIN number: " size="46 " /></li>
-                <li><label for="phone number"></label></li>
-                <li><input type="text" name="phone number" placeholder="phone number: " size="46 " /></li>
-                <li><label id="gender "></label></li>
-
-                <!-- Removed checked from the input radio input sex and added the various ids. -->
-                <li><input type="radio " name="sex " id="sexM " value="Male " /><span>Male</span></li>
-                <li><input type="radio " name="sex " id="sexF " value="Female " /><span>Female</span></li>
-                <li><label id=language></label></li>
-
-
-                <!-- Added onclick assigned to the method subForm -->
-                <li><input type="button " name="submit " onclick=subForm() value="Submit " /></li>
-            </ul>
-        </form>
-    </div>
-    <script src="./App.js "></script>
-</body>
-
-
-<script src="/public/bootstrap/bootstrap.min.js "></script>
+                    </div>
+                    <div>
+                        <li><input type="submit" name="submit" onclick=subform() value="submit" /></li>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <script src="../public/js/farmOneReg.js"></script>
+    <script src="../public/bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>

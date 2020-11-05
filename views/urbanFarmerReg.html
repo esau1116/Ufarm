@@ -10,62 +10,70 @@
 </head>
 
 <body>
-    <h1>JavaScript Field Label Form Validation using a registration form</h1>
+    <h1>Urban famer registration form</h1>
+    <form name="registration" action="">
+        <div class="container">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first name">First Name <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="firstname" id="firstname"
+                        placeholder="Enter Customer's First Name" required>
+                    <div id="error1" style="display: none; color:red;">First Name is required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="first name">Surname <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="surname" id="surname"
+                        placeholder="Enter Customer's Surname Name" required>
+                    <div id="error2" style="display: none; color:red;">Surname is required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="date of birth">date of birth<span style="color: red;">*</span></label>
+                    <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth"
+                        placeholder="date of birth">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="phone number">phone number<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="firstname" id="firstname"
+                        placeholder="urban famer number" required>
+                    <div id="error1" style="display: none; color:red;">First Name is required</div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="nin">NIN<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="NIN" id="NIN" placeholder="Enter NIN number" required>
+                    <div id="error2" style="display: none; color:red;">NIN is required</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="date of registration">date of registration<span style="color: red;">*</label>
+                    <input type="text" class="form-control" pattern="dd-mm-yyyy" name="dateOfRegistration"
+                        id="othername" placeholder="date of registration" required>
+                    <div id="error2" style="display: none; color:red;">date of registration is required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="ward">WARD<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="ward" id="ward"
+                        placeholder="Enter ward" required>
+                    <div id="error1" style="display: none; color:red;">ward is required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="activities taken">Activities undertaken<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="acitivitiesUnderTaken"
+                        id="acitivitiesUnderTaken" placeholder="Enter acititvities taken" required>
+                    <div id="error2" style="display: none; color:red;">Acitivities taken required</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="unique id">ID<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="userId" id="userId" placeholder="userId">
+                </div>
+                <li><input type="submit" name="submit" onclick=subform() value="submit" /></li>
+            </div>
+    </form>
 
-    <h2>Use tab key or mouse to go next field</h2>
-
-    <!-- Under action we can link to database using action -->
-
-    <div class="formStyle">
-        <form name="registration" action=" /process" method="GET">
-            <ul>
-                <li><label for="name"></label></li>
-
-                <li><input type="text" placeholder="name:" name="username" size="46" /></li>
-
-                <li><label for="username"></label></li>
-
-                <li><input type="date of birth" placeholder="date of birth:" name="date of birthid" size="46" /></li>
-
-                <li><label for="date of registration"></label></li>
-
-                <li><input type="text" placeholder="date of registration:" name="date of registration" size="46" /></li>
-
-                <li><label for="address"></label></li>
-                <li><input type="text" placeholder="Address:" name="address" size="46" /></li>
-                <li><label for="ward name"></label></li>
-                <li><select name="country" placeholder="Country:">
-                        <option selected="" value="Default">(Please select a country)</option>
-                        <option value="AF">Australia</option>
-                        <option value="AL">Canada</option>
-                        <option value="DZ">India</option>
-                        <option value="AS">Russia</option>
-                        <option value="AD">USA</option>
-                    </select></li>
-                <li><label for="zip"></label></li>
-                <li><input type="text" name="zip" placeholder="ZIP Code:" size="46" /></li>
-                <li><label for="email"></label></li>
-                <li><input type="text" name="email" placeholder="Email:" size="46" /></li>
-                <li><label id="gender"></label></li>
-
-                <!-- Removed checked from the input radio input sex and added the various ids. -->
-                <li><input type="radio" name="sex" id="sexM" value="Male" /><span>Male</span></li>
-                <li><input type="radio" name="sex" id="sexF" value="Female" /><span>Female</span></li>
-                <li><label id=language></label></li>
-
-                <!-- Removed checked from the input checkbox and added the various ids -->
-                <li><input type="checkbox" name="en" id="Eng" value="en" /><span>English</span></li>
-                <li><input type="checkbox" name="nonen" id="Neng" value="noen" /><span>Non English</span></li>
-                <li><label for="desc"></label></li>
-                <li><textarea name="desc" placeholder="About [Optional]" id="desc"></textarea></li>
-
-                <!-- Added onclick assigned to the method subForm -->
-                <li><input type="button" name="submit" onclick=subForm() value="Submit" /></li>
-            </ul>
-        </form>
-    </div>
-    <script src="./test.js"></script>
-    <script src="/public/bootstrap/bootstrap.min.js"></script>
+    <script src="../public/js/uFarmReg.js"></script>
+    <script src="../public/bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>

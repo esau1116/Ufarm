@@ -11,8 +11,69 @@
 
 <body>
 
-    <script src="/public/bootstrap/bootstrap.min.js"></script>
-</body>
+    <body>
+        <h1>PRODUCT REGISTRATION</h1>
+        <form name="registration" action="">
+            <div class="container">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="first name">First Name <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" pattern="[A-Za-z]+" name="firstName" id="firstName"
+                            placeholder="Enter Customer's First Name" required>
+                        <div id="error1" style="display: none; color:red;">First Name is required</div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Surname">Surname <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="surName" id="surName"
+                            placeholder="Enter Customer's Surname Name" required>
+                        <div id="error2" style="display: none; color:red;">Surname is required</div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="date">Date<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="dd-mm-yyy" id="d" placeholder="WARD">
+                        <div id="error1" style="display: none; color:red;">date is required</div>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="produce">produce<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="produce" id="produce"
+                            placeholder="urban famer number" required>
+                        <div id="error1" style="display: none; color:red;">Produce Name is required</div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="quantity">Quantity<span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="quantity" id="quantity" placeholder="quantity"
+                            required>
+                        <div id="error2" style="display: none; color:red;">Quantity is required</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="price">Price<span style="color: red;">*</label>
+                        <input type="text" class="form-control" placeholder="Price" name="price" id="price" required>
+                        <div id="error2" style="display: none; color:red;">date of registration is required</div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="mode of payment">Mode of payment<span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" name="modeOfPayment" id="modeOfPayment"
+                                placeholder="Mode Of Payment" required>
+                            <div id="error1" style="display: none; color:red;">Mode of payment</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="directions to recidence">Directions to residence<span
+                                    style="color: red;">*</span></label>
+                            <input type="text" class="form-control" pattern="[A-Za-z]+" name="directionsToResidence"
+                                id="directionsToResidence" placeholder="Enter directions" required>
+                            <div id="error2" style="display: none; color:red;">Acitivities taken required</div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <script src="/public/bootstrap/bootstrap.min.js"></script>
+    </body>
 
 </html>
 

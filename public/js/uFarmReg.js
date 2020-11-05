@@ -1,8 +1,9 @@
-const subForm = () => {
+const subform = () => {
   const uName = document.registration.username;
   const uDob = document.registration.dateOfBirth;
   const uDor = document.registration.dateOfRegiration;
-
+  const uNinn = document.registration.nationalIdentificationNumber;
+  const uContact = document.registration.contact;
   //Defining regex for name
   const alphanumeric = /^[0-9a-zA-Z]+$/;
 
@@ -14,19 +15,36 @@ const subForm = () => {
   }
 
   // Defining regex for date
-  const dregex = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+  //const regex = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
 
   // Initializiing function for date of birth
-  if (uDob.value.match(dregex)) {
-    uDob.style.border = "2px solid green";
+  //if (uDob.value.match(regex)) {
+  // uDob.style.border = "2px solid green";
+  //} else {
+  //uDob.style.border = "2px solid red";
+  //}
+  //const dregex = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+  //Initialising function for date of birth
+  //if (uDor.value.match(regex)) {
+  // uDor.style.border = "3px solid green";
+  //} else {
+  //uDor.style.border = "3px solid red";
+  //}
+  //Defining regex for nin
+  //const alphanumeric = /^[0-9a-zA-Z]+$/;
+  // Initializing if function for username
+  if (uNinn.value.match(alphanumeric)) {
+    uNinn.style.border = "2px solid green";
   } else {
-    uDob.style.border = "2px solid red";
+    uNinn.style.border = "2px solid red";
   }
+  //definig regex for contact
+  const contactRegex = /^\d{10}$/;
 
-  //Initialising function for date of registration
-  if (uDor.value.match(dregex)) {
-    uDor.style.border = "2px solid green";
+  //Initiallising the function of contact
+  if (uContact.value.match(contactRegex)) {
+    uContact.style.border = "3px solid green";
   } else {
-    uDor.style.border = "2px solid red";
+    uContact.style.border = "3px solid green";
   }
 };
