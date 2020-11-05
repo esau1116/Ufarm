@@ -16,57 +16,55 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="first name">First Name <span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="firstname" id="firstname"
-                        placeholder="Enter Customer's First Name" required>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="FISRT NAME"
+                        required>
                     <div id="error1" style="display: none; color:red;">First Name is required</div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="first name">Surname <span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="surname" id="surname"
-                        placeholder="Enter Customer's Surname Name" required>
+                    <input type="text" class="form-control" name="surName" id="surName" placeholder="SURNAME" required>
                     <div id="error2" style="display: none; color:red;">Surname is required</div>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="date of birth">date of birth<span style="color: red;">*</span></label>
+                    <label for="date of birth">Date of birth<span style="color: red;">*</span></label>
                     <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth"
-                        placeholder="date of birth">
+                        placeholder="DATE OF BIRTH">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="phone number">phone number<span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="firstname" id="firstname"
-                        placeholder="urban famer number" required>
+                    <label for="phone number">Phone number<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="CONTACT"
+                        required>
                     <div id="error1" style="display: none; color:red;">First Name is required</div>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="nin">NIN<span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" name="NIN" id="NIN" placeholder="Enter NIN number" required>
+                    <input type="text" class="form-control" name="nin" id="nin" placeholder="NIN" required>
                     <div id="error2" style="display: none; color:red;">NIN is required</div>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="date of registration">date of registration<span style="color: red;">*</label>
-                    <input type="text" class="form-control" pattern="dd-mm-yyyy" name="dateOfRegistration"
-                        id="othername" placeholder="date of registration" required>
+                    <label for="date of registration">Date of registration<span style="color: red;">*</label>
+                    <input type="datetime-local" class="form-control" name="dateOfRegistration" id="dateOfRegistration"
+                        placeholder="date of registration" required>
                     <div id="error2" style="display: none; color:red;">date of registration is required</div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="ward">WARD<span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="ward" id="ward"
-                        placeholder="Enter ward" required>
+                    <input type="text" class="form-control" name="ward" id="ward" placeholder="Enter WARD" required>
                     <div id="error1" style="display: none; color:red;">ward is required</div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="activities taken">Activities undertaken<span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]+" name="acitivitiesUnderTaken"
-                        id="acitivitiesUnderTaken" placeholder="Enter acititvities taken" required>
+                    <input type="text" class="form-control" name="acitivitiesUnderTaken" id="acitivitiesUnderTaken"
+                        placeholder="Enter ACITIVITIES" required>
                     <div id="error2" style="display: none; color:red;">Acitivities taken required</div>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="unique id">ID<span style="color: red;">*</span></label>
-                    <input type="text" class="form-control" name="userId" id="userId" placeholder="userId">
+                    <input type="text" class="form-control" name="userId" id="userId" placeholder="USER ID">
                 </div>
                 <li><input type="submit" name="submit" onclick=subform() value="submit" /></li>
             </div>
