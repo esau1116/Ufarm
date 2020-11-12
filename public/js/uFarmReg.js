@@ -60,6 +60,6 @@ const subform = () => {
   if (uWard.value.match(alphanumeric)) {
     uWard.style.border = "4px solid blue";
   } else {
-    uWard.style.border = "4px solid red";
+    uWard.style.border = "4px solid red";z
   }
 };

@@ -1,0 +1,17 @@
+body {
+  padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#submit {
+  height: 50px;
+  width: 200px;
+  color: black;
+  text-align: center;
+  background-color: yellowgreen;
+  border-radius: 10px;
+}
+
+form {
+  border: 1px solid black;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Ufarm",
+  "version": "1.0.0",
+  "description": "A web application that promotes and supports urban farming.",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esau1116/Ufarm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esau1116/Ufarm/issues"
+  },
+  "homepage": "https://github.com/esau1116/Ufarm#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13",
+    "node": "^15.0.1",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.0"
+  }
+}
