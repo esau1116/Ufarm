@@ -1,0 +1,63 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title PRODUCT REGISTRATION
+link(rel="stylesheet", href="/css/styles.css")
+link(rel="stylesheet", href="/bootstrap/bootstrap.min.css")
+h1 PRODUCT REGISTRATION
+form(name="registration", action)
+  .container
+    .form-row
+      .form-group.col-md-4
+        label(for="product name")
+          | Product Name
+          span(style="color: red;") *
+        input.form-control#productName(type="text", name="productName", placeholder="Enter Product Name", required)
+        #error1(style="display: none; color:red;") Product name is required
+      .form-group.col-md-4
+        label(for="Ward")
+          | WARD
+          span(style="color: red;") *
+        input.form-control#ward(type="text", name="ward", placeholder="Enter Ward", required)
+        #error2(style="display: none; color:red;") Ward is required
+      .form-group.col-md-4
+        label(for="date")
+          | Date
+          span(style="color: red;") *
+        input.form-control#date(type="text", name="date", placeholder="DATE")
+        #error1(style="display: none; color:red;") date is required
+    .form-row
+      .form-group.col-md-3
+        label(for="price")
+          | PRICE
+          span(style="color: red;") *
+        input.form-control#price(type="text", name="price", placeholder="Price", required)
+        #error1(style="display: none; color:red;") Price is required
+      .form-group.col-md-3
+        label(for="quantity")
+          | Quantity
+          span(style="color: red;") *
+        input.form-control#quantity(type="text", name="quantity", placeholder="quantity", required)
+        #error2(style="display: none; color:red;") Quantity is required
+      .form-group.col-md-6
+        label(for="Mode of payment")
+          | Mode of payment
+          span(style="color: red;") *
+        input.form-control#modeOfPayment(type="text", placeholder="mode of payment", name="modeOfPayment", required)
+        #error2(style="display: none; color:red;") mode of payment is required
+    .form-row
+      .form-group.col-md-6
+        label(for="produce")
+          | PRODUCE
+          span(style="color: red;") *
+        input.form-control#produceType(type="text", name="produceType", placeholder="Produce Type", required)
+        #error1(style="display: none; color:red;") Produce type is required
+      .form-group.col-md-6
+        label(for="directions to recidence")
+          | Directions to residence
+          span(style="color: red;") *
+        input.form-control#directionsToResidence(type="text", name="directionsToResidence", placeholder="Enter directions", required)
+        #error2(style="display: none; color:red;") Acitivities taken required
+    .form-row
+      input(type="submit", name="submit", onclick="subform()", value="submit")
+script(src="/js/productReg.js")
+script(src="/bootstrap/bootstrap.min.js")

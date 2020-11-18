@@ -2,8 +2,7 @@ body {
   padding: 20px;
   font-family: "Courier New", Courier, monospace;
 }
-
-#submit {
+background-color:green #submit {
   height: 50px;
   width: 200px;
   color: black;
@@ -14,4 +13,7 @@ body {
 
 form {
   border: 1px solid black;
+}
+#container {
+  background-color: brown;
 }

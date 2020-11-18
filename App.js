@@ -1,31 +1,49 @@
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
-const pug = require('pug')
-const path = require('path')
-const nodemon = require('nodemon')
-const bodyParser = require('body-parser')
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const pug = require("pug");
+const path = require("path");
+const nodemon = require("nodemon");
+const bodyParser = require("body-parser");
 //const session = require('express-session');
 //const passport = require('passport');
 //const passportLocalMongoose = require('passport-local-mongoose');
 //const connectEnsureLogin = require('connect-ensure-login');
-//const loginRoutes = require('./routes/loginRoutes')
+const mainRoute = require("./routes/mainRoute");
 //const Employee = require('./models/supervisorRegModel')
+require("dotenv/config");
 
+// mongoose.connect(
+//   process.env.db_connection,
+//   {useNewUrlParser:true,userUnifiedTopology:true,userCreateIndex:true,userFindAndModify:false})
+//   function (err) {
+//     if (err) throw err;
+//     else console.log("tech is cool");
+//   }
+// );
 
-mongoose.connect('mongodb://localhost:27017/ufarm',{useNewUrlParser:true, useUnifiedTopology:true, useFindAndModify: false},function(err){
-    if (err) throw err;
-    else
-    console.log('tech is cool');  
-})
+mongoose.connect(process.env.db_connection, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+mongoose.connection
+  .on("open", () => {
+    console.log("Mongoose connection open");
+  })
+  .on("error", (err) => {
+    console.log(`Connection error: ${err.message}`);
+  });
 
-app.set('views',path.join(__dirname,'views'));
-app.set('view engine','pug');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'))
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+app.use(express.static("public"));
 
 // app.use(session({
 //     secret: 'secret',
@@ -40,13 +58,12 @@ app.use(express.static('public'))
 // passport.serializeUser(Employee.serializeUser());
 // passport.deserializeUser(Employee.deserializeUser());
 
-//app.use('/', mainRoute)
+app.use("/", mainRoute);
 
-app.get('*',(req,res)=>{
-    res.send('Error')
-})
+app.get("*", (req, res) => {
+  res.send("Error");
+});
 
-app.listen(3000,()=>{
-    console.log('listening on port 3000');
-    
-})
+app.listen(3000, () => {
+  console.log("listening on port 3000");
+});
