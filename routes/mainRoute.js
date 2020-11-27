@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const farmerOne = require("../models/farmerOne");
 // const passport = require('passport');
-// const Employee = require('../models/supervisorRegModel')
-const FarmerOne = require("../models/farmerOne");
-
+// const FarmerOne = require("../models/supervisorRegModel");
+// const FarmerOne = require("../models/farmerOne");
+//const UrbanFarmer=require("../models/urbanFarmer");
 // router.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../views", "/index.html"));
 // });
@@ -13,13 +14,13 @@ router.get("/FarmerReg", (req, res) => {
   res.render("farmerOneReg");
 });
 
-router.get("/productsReg", (req, res) => {
-  res.render("productsReg");
-});
-
+// router.get("/productsReg", (req, res) => {
+//   res.render("productsReg");
+// });
+//Uplloading data
 router.post("/fRegister", async (req, res) => {
   try {
-    const regFO = new FarmerOne(req.body);
+    const regFO = new farmerOne(req.body);
     console.log(regFO);
     await regFO.save();
     res.redirect("/Folist");
@@ -27,15 +28,43 @@ router.post("/fRegister", async (req, res) => {
     res.status(400).send("failed to post data");
   }
 });
-
+//retreiving data from the data base
 router.get("/Folist", async (req, res) => {
   try {
-    const FOs = await FarmerOne.find();
+    const FOs = await farmerOne.find();
     res.render("FOList", { users: FOs });
   } catch (err) {
     res.status(400).send("failed to post data");
   }
 });
+
+// router.get("/UrbanReg", (req, res) => {
+//   res.render("urbanFarmer");
+// });
+
+// // router.get("/productsReg", (req, res) => {
+// //   res.render("productsReg");
+// //});
+// //Uplloading data
+// router.post("/uRegister", async (req, res) => {
+//   try {
+//     const regFO = new FarmerOne(req.body);
+//     console.log(regFO);
+//     await regFO.save();
+//     res.redirect("/Uflist");
+//   } catch (err) {
+//     res.status(400).send("failed to post data");
+//   }
+// });
+// //retreiving data from the data base
+// router.get("/Folist", async (req, res) => {
+//   try {
+//     const FOs = await FarmerOne.find();
+//     res.render("FOList", { users: FOs });
+//   } catch (err) {
+//     res.status(400).send("failed to post data");
+//   }
+// });
 
 // router.get("/productsReg", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../views", "/productsReg.html"));
@@ -113,24 +142,45 @@ router.get("/Folist", async (req, res) => {
 // })
 
 // //Delete Route Code
-// router.post("/delete", async (req, res) => {
-//     try {
-//       await Customer.deleteOne({ _id: req.body.id })
-//       res.redirect('back')
-//     } catch (error) {
-//        res.status(400).send("unable to delete from database");
-//     }
-//   })
+router.post("/delete", async (req, res) => {
+  try {
+    await farmerOne.deleteOne({ _id: req.body.id });
+    res.redirect("back");
+  } catch (error) {
+    res.status(400).send("unable to delete from database");
+  }
+});
 
-//   router.post('/updating', async(req, res) => {
-//        try {
-//           const userItem = await Customer.findById(req.body.id)
-//           res.render('userUpdate', { user: userItem })
-//        }
-//        catch{
-//           res.status(500).send("unable to find item in the database");
-//        }
-//    })
+// Update data in form
+router.get('/update/:id', async (req, res) => {
+    try {
+      const updateUser = await farmerOne.findOne({ _id: req.params.id });
+      res.render('farmerOneUpdateList', { user: updateUser });
+    } catch (err) {
+      res.status(400).send('Unable to find item in the database');
+  }
+});
+
+router.post('/update', async (req, res) => {
+    try {
+      await farmerOne.findOneAndUpdate({ _id: req.query.id }, req.body);
+      res.redirect('FOList');
+    } catch (err) {
+      res.status(404).send('Unable to update item in the database');
+    }
+});
+
+
+
+  // router.post('/updating', async(req, res) => {
+  //      try {
+  //         const userItem = await Customer.findById(req.body.id)
+  //         res.render('userUpdate', { user: userItem })
+  //      }
+  //      catch{
+  //         res.status(500).send("unable to find item in the database");
+  //      }
+  //  })
 
 // //update
 // router.post("/update", async (req, res) => {

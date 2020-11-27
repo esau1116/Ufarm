@@ -1,4 +1,5 @@
 const express = require("express");
+//Initiating the application app.
 const app = express();
 const mongoose = require("mongoose");
 const pug = require("pug");

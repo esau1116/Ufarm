@@ -10,5 +10,5 @@ const farmerOneSchema = new mongoose.Schema({
   residence: String,
   directionsToResidence: String,
 });
-
+//Associating the schema with the collection name.
 module.exports = mongoose.model("FarmerOne", farmerOneSchema);
