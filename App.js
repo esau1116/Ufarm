@@ -1,3 +1,4 @@
+// Importing express.
 const express = require("express");
 //Initiating the application app.
 const app = express();
@@ -58,7 +59,6 @@ app.use(express.static("public"));
 // passport.use(Employee.createStrategy());
 // passport.serializeUser(Employee.serializeUser());
 // passport.deserializeUser(Employee.deserializeUser());
-
 app.use("/", mainRoute);
 
 app.get("*", (req, res) => {

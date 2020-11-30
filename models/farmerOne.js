@@ -7,8 +7,8 @@ const farmerOneSchema = new mongoose.Schema({
   userNumber: String,
   nin: String,
   dateOfRegistration: String,
-  residence: String,
+  residence: String,  
   directionsToResidence: String,
-});
+}); 
 //Associating the schema with the collection name.
 module.exports = mongoose.model("FarmerOne", farmerOneSchema);

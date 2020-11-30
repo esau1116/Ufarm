@@ -17,3 +17,8 @@ form {
 #container {
   background-color: brown;
 }
+
+button, input {
+  overflow: visible;
+  background-color: green;
+}
